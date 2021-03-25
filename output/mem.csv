@@ -1,0 +1,16 @@
+process,time,rss,used,available,percent,event
+main, 19/03/2021 15:52:19, 0.07, 15.63, 16.12, 49.2%, #MEM pipeline.run before preload_injectables
+main, 19/03/2021 15:52:19, 0.07, 15.64, 16.12, 49.2%, #MEM pipeline.run before run_models
+main, 19/03/2021 15:52:21, 0.32, 15.94, 15.82, 50.2%, pipeline.run after input_pre_processor
+main, 19/03/2021 15:52:23, 0.33, 16.01, 15.75, 50.4%, pipeline.run after setup_data_structures
+main, 19/03/2021 15:54:42, 0.33, 15.58, 16.18, 49.0%, pipeline.run after initial_seed_balancing
+main, 19/03/2021 15:54:42, 0.33, 15.57, 16.18, 49.0%, pipeline.run after meta_control_factoring
+main, 19/03/2021 15:54:42, 0.33, 15.58, 16.18, 49.1%, pipeline.run after final_seed_balancing
+main, 19/03/2021 15:54:48, 0.33, 15.56, 16.20, 49.0%, pipeline.run after integerize_final_seed_weights
+main, 19/03/2021 17:38:40, 0.31, 15.21, 16.55, 47.9%, pipeline.run after sub_balancing.geography=TAZ
+main, 19/03/2021 18:21:27, 1.09, 14.07, 17.68, 44.3%, pipeline.run after sub_balancing.geography=MAZ
+main, 19/03/2021 18:23:05, 1.25, 14.21, 17.55, 44.7%, pipeline.run after expand_households
+main, 19/03/2021 18:28:33, 1.27, 14.21, 17.55, 44.7%, pipeline.run after summarize
+main, 19/03/2021 18:28:45, 1.28, 14.32, 17.43, 45.1%, pipeline.run after write_tables
+main, 19/03/2021 18:30:06, 1.46, 14.54, 17.22, 45.8%, pipeline.run after write_synthetic_population
+main, 19/03/2021 18:30:06, 1.46, 14.54, 17.22, 45.8%, #MEM pipeline.run after run_models
