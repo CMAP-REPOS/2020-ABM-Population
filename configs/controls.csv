@@ -1,0 +1,34 @@
+target,geography,seed_table,importance,control_field,expression
+num_hh,MAZ,households,100000000,HH,(households.WGTP > 0) & (households.WGTP < np.inf)
+adults,MAZ,persons,5000,ADLT,persons.AGEP >= 16
+workers,MAZ,persons,5000,WRKR,persons.JWTRNS != 'bb'
+children,MAZ,persons,5000,KID,persons.AGEP < 16
+whitenh,TAZ,persons,5000,POPWHT,(persons.RAC1P == 1) & (persons.HISP == 1)
+blacknh,TAZ,persons,5000,POPBLK,(persons.RAC1P == 2) & (persons.HISP == 1)
+asiannh,TAZ,persons,5000,POPASN,(persons.RAC1P == 6) & (persons.HISP == 1)
+othernh,TAZ,persons,5000,POPOTH,"(persons.RAC1P.isin([3,4,5,7,8,9])) & (persons.HISP == 1)"
+hispanic,TAZ,persons,5000,POPHSP,persons.HISP > 1
+hh_inc_1,TAZ,households,5000,INC1,households.HINCP19 < 30000
+hh_inc_2,TAZ,households,5000,INC2,(households.HINCP19 >= 30000) & (households.HINCP19 < 60000)
+hh_inc_3,TAZ,households,5000,INC3,(households.HINCP19 >= 60000) & (households.HINCP19 < 100000)
+hh_inc_4,TAZ,households,5000,INC4,households.HINCP19 >= 100000
+hh_under_35,TAZ,persons,5000,HHRU35,(persons.RELSHIPP == 20) & (persons.AGEP < 35)
+hh_35_64,TAZ,persons,5000,HHR3564,(persons.RELSHIPP == 20) & (persons.AGEP >= 35) & (persons.AGEP < 65)
+hh_65,TAZ,persons,5000,HHRO64,(persons.RELSHIPP == 20) & (persons.AGEP >= 65)
+hh_size_1,TAZ,households,5000,SIZE1,households.NP == 1
+hh_size_2,TAZ,households,5000,SIZE2,households.NP == 2
+hh_size_3,TAZ,households,5000,SIZE3,households.NP == 3
+hh_size_4,TAZ,households,5000,SIZE4,households.NP == 4
+hh_size_5,TAZ,households,5000,SIZE5,households.NP == 5
+hh_size_6,TAZ,households,5000,SIZE6,households.NP == 6
+hh_size_7,TAZ,households,5000,SIZE7P,households.NP >= 7
+bldg_type_1,TAZ,households,1000,BTYPE1,households.BLD == 1
+bldg_type_2,TAZ,households,1000,BTYPE2,households.BLD == 2
+bldg_type_3,TAZ,households,1000,BTYPE3,households.BLD == 3
+bldg_type_4,TAZ,households,1000,BTYPE4,households.BLD == 4
+bldg_type_5,TAZ,households,1000,BTYPE5,households.BLD == 5
+bldg_type_6,TAZ,households,1000,BTYPE6,households.BLD == 6
+bldg_type_7,TAZ,households,1000,BTYPE7,households.BLD == 7
+bldg_type_8,TAZ,households,1000,BTYPE8,households.BLD == 8
+bldg_type_9,TAZ,households,1000,BTYPE9,households.BLD == 9
+bldg_type_10,TAZ,households,1000,BTYPE10,households.BLD == 10

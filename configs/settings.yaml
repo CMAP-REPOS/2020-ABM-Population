@@ -1,0 +1,162 @@
+####################################################################
+# PopulationSim Properties
+####################################################################
+
+
+# Algorithm/Software Configuration
+# ------------------------------------------------------------------
+INTEGERIZE_WITH_BACKSTOPPED_CONTROLS: True
+SUB_BALANCE_WITH_FLOAT_SEED_WEIGHTS: False
+GROUP_BY_INCIDENCE_SIGNATURE: True
+USE_SIMUL_INTEGERIZER: True
+USE_CVXPY: False
+max_expansion_factor: 30
+
+
+# Geographic Settings
+# ------------------------------------------------------------------
+geographies: [REGION, PUMA, TAZ, MAZ]
+seed_geography: PUMA
+
+
+# Tracing
+# ------------------------------------------------------------------
+trace_geography:
+  TAZ: 3632
+  MAZ: 17418
+
+  
+# Data Directory
+# ------------------------------------------------------------------
+data_dir: data
+
+
+# Input Data Tables
+# ------------------------------------------------------------------
+# input_pre_processor input_table_list
+input_table_list:
+  - tablename: households
+    filename : seedhh_2019_03172021.csv
+    index_col: hh_id
+    column_map:
+      hh_num: hh_id
+  - tablename: persons
+    # expression_filename: seed_persons_expressions.csv
+    filename : seedperson_2019_03172021.csv
+    column_map:
+      hh_num: hh_id
+      SPORDER: per_num
+    #drop_columns:
+  - tablename: geo_cross_walk
+    filename : geo_cross_walk.csv
+  - tablename: TAZ_control_data
+    filename : control_totals_taz.csv
+  - tablename: MAZ_control_data
+    filename : control_totals_maz.csv
+   # filename : scaled_control_totals_meta.csv
+
+
+# Reserved Column Names
+# ------------------------------------------------------------------
+household_weight_col: WGTP
+household_id_col: hh_id
+total_hh_control: num_hh
+
+
+# Control Specification File Name
+# ------------------------------------------------------------------
+control_file_name: controls.csv
+
+
+# Output Tables
+# ------------------------------------------------------------------
+# output_tables can specify either a list of output tables to include or to skip
+# if neither is specified, then no tables will be written
+
+output_tables:
+  action: include
+  tables:
+    - summary_TAZ
+    - summary_MAZ
+    - summary_TAZ_PUMA
+    - expanded_household_ids
+    - crosswalk
+    - control_spec
+    - MAZ_weights_sparse
+    - MAZ_controls
+    - TAZ_controls
+    - trace_TAZ_weights
+    - trace_MAZ_weights
+
+
+# Synthetic Population Output Specification
+# ------------------------------------------------------------------
+#
+
+output_synthetic_population:
+  household_id: household_id
+  households:
+    filename: synthetic_households.csv
+    columns:
+      - SERIALNO
+      - SERIALNO_RIGHT
+      - YEAR
+      - NP
+      - HINCP
+      - HINCP19
+      - ADJINC
+      - HHT
+      - TYPE
+      - NOC
+      - BLD
+      - TEN
+      - VEH
+      - WIF
+      - MV
+      - BUS
+      - VALP
+      - YBL
+      - CONP
+      - RMSP
+      - BDSP
+      - ACR
+  persons:
+    filename: synthetic_persons.csv
+    columns:
+      - per_num
+      - AGEP
+      - RELSHIPP
+      - ESR
+      - SCHG
+      - SEX
+      - WKW
+      - WKHP
+      - RAC1P
+      - HISP
+      - MSP
+      - POVPIP
+      - PERNP
+      - SCHL
+      - INDP
+      - SCH
+      - JWTRNS
+
+
+# Steps for base mode
+# ------------------------------------------------------------------
+run_list:
+  steps:
+    - input_pre_processor
+    - setup_data_structures
+    - initial_seed_balancing
+    - meta_control_factoring
+    - final_seed_balancing
+    - integerize_final_seed_weights
+    - sub_balancing.geography=TAZ
+    - sub_balancing.geography=MAZ
+    - expand_households
+    - summarize
+    - write_tables
+    - write_synthetic_population
+
+#  resume_after: expand_households
