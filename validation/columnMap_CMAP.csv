@@ -1,0 +1,34 @@
+NAME,GEOGRAPHY,CONTROL,SUMMARY
+MAZ - Total Households,MAZ,num_hh_control,num_hh_result
+MAZ - Adults,MAZ,adults_control,adults_result
+MAZ - Workers,MAZ,workers_control,workers_result
+MAZ - Children,MAZ,children_control,children_result
+TAZ - White,TAZ,whitenh_control,whitenh_result
+TAZ - Black,TAZ,blacknh_control,blacknh_result
+TAZ - Asian,TAZ,asiannh_control,asiannh_result
+TAZ - Other,TAZ,othernh_control,othernh_result
+TAZ - Hispanic,TAZ,hispanic_control,hispanic_result
+TAZ - HH age <35,TAZ,hh_under_35_control,hh_under_35_result
+TAZ - HH age 35 - 64,TAZ,hh_35_64_control,hh_35_64_result
+TAZ - HH age >64,TAZ,hh_65_control,hh_65_result
+TAZ - HH size 1,TAZ,hh_size_1_control,hh_size_1_result
+TAZ - HH size 2,TAZ,hh_size_2_control,hh_size_2_result
+TAZ - HH size 3,TAZ,hh_size_3_control,hh_size_3_result
+TAZ - HH size 4,TAZ,hh_size_4_control,hh_size_4_result
+TAZ - HH size 5,TAZ,hh_size_5_control,hh_size_5_result
+TAZ - HH size 6,TAZ,hh_size_6_control,hh_size_6_result
+TAZ - HH size 7p,TAZ,hh_size_7_control,hh_size_7_result
+TAZ - HH inc 1 (low),TAZ,hh_inc_1_control,hh_inc_1_result
+TAZ - HH inc 2,TAZ,hh_inc_2_control,hh_inc_2_result
+TAZ - HH inc 3,TAZ,hh_inc_3_control,hh_inc_3_result
+TAZ - HH inc 4 (high),TAZ,hh_inc_4_control,hh_inc_4_result
+TAZ - BLD 2,TAZ,bldg_type_2_control,bldg_type_2_result
+TAZ - BLD 3,TAZ,bldg_type_3_control,bldg_type_3_result
+TAZ - BLD 4,TAZ,bldg_type_4_control,bldg_type_4_result
+TAZ - BLD 5,TAZ,bldg_type_5_control,bldg_type_5_result
+TAZ - BLD 6,TAZ,bldg_type_6_control,bldg_type_6_result
+TAZ - BLD 7,TAZ,bldg_type_7_control,bldg_type_7_result
+TAZ - BLD 8,TAZ,bldg_type_8_control,bldg_type_8_result
+TAZ - BLD 9 ,TAZ,bldg_type_9_control,bldg_type_9_result
+TAZ - BLD 1,TAZ,bldg_type_1_control,bldg_type_1_result
+TAZ - BLD 10,TAZ,bldg_type_10_control,bldg_type_10_result
